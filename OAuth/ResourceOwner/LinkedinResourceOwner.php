@@ -15,8 +15,6 @@ use Buzz\Message\RequestInterface as HttpRequestInterface;
 
 /**
  * LinkedinResourceOwner
- *
- * @author Francisco Facioni <fran6co@gmail.com>
  */
 class LinkedinResourceOwner extends GenericOAuth2ResourceOwner
 {
@@ -30,7 +28,6 @@ class LinkedinResourceOwner extends GenericOAuth2ResourceOwner
         'user_response_class' => '\HWI\Bundle\OAuthBundle\OAuth\Response\AdvancedPathUserResponse',
         'realm'               => 'http://api.linkedin.com',
         'scope'               => null,
-        'state'               => 'asEm45pogzw2DCEE23RTB123FWF4545323sdffef424gn',
     );
 
     /**
