@@ -46,11 +46,18 @@ class GenericOAuth2ResourceOwner extends AbstractResourceOwner
      */
     public function getAuthorizationUrl($redirectUri, array $extraParameters = array())
     {
+        try {
+            $state = $this->getOption('state');
+        } catch (\Exception $e) {
+            $state = null;
+        }
+
         $parameters = array_merge(array(
             'response_type' => 'code',
             'client_id'     => $this->getOption('client_id'),
             'scope'         => $this->getOption('scope'),
             'redirect_uri'  => $redirectUri,
+            'state'         => $state,
         ), $extraParameters);
 
         return $this->normalizeUrl($this->getOption('authorization_url'), $parameters);
