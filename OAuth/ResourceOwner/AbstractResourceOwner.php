@@ -173,6 +173,7 @@ abstract class AbstractResourceOwner implements ResourceOwnerInterface
         $request->setHeaders($headers);
         $request->setContent($content);
 
+        $this->httpClient->setTimeout(20);
         $this->httpClient->send($request, $response);
 
         return $response;
